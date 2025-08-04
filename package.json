@@ -1,0 +1,33 @@
+{
+  "name": "tsconfig-graph",
+  "version": "0.0.0",
+  "description": "Build a graph of tsconfigs to owning files and project references",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./bin/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "globby": "^14.0.0",
+    "p-limit": "^7.1.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronccasanova/tsconfig-graph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aaronccasanova/tsconfig-graph/issues"
+  },
+  "homepage": "https://github.com/aaronccasanova/tsconfig-graph/blob/main"
+}
