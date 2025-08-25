@@ -5,6 +5,7 @@ export type {
   TSConfigGraphNode,
 } from './types.js'
 
+export type { BuildTSConfigGraphOptions } from './build-tsconfig-graph.js'
 export { buildTSConfigGraph } from './build-tsconfig-graph.js'
 
 export { mapFiles } from './map-files.js'

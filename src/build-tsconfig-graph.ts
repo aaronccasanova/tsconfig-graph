@@ -14,7 +14,7 @@ type GlobbyOptions = NonNullable<GlobbyParameters[1]>
 
 export interface BuildTSConfigGraphOptions {
   /**
-   * The maximum number of concurrent tsconfig file processing operations.
+   * The maximum number of concurrently processed tsconfigs.
    * @default 50
    */
   concurrency?: number

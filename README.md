@@ -84,6 +84,40 @@ export interface TSConfigGraphNode {
   references: ConfigFileName[]
 }
 
+export interface BuildTSConfigGraphOptions {
+  /**
+   * The maximum number of concurrently processed tsconfigs.
+   * @default 50
+   */
+  concurrency?: number
+  /**
+   * The current working directory in which to search.
+   *
+   * @default process.cwd()
+   */
+  cwd?: GlobbyOptions['cwd']
+  /**
+   * Allow patterns to match entries that begin with a period (.).
+   *
+   * @default false
+   */
+  dot?: GlobbyOptions['dot']
+  /**
+   * Respect ignore patterns in .gitignore files that apply to the globbed files.
+   *
+   * @default false
+   */
+  gitignore?: GlobbyOptions['gitignore']
+  /**
+   * Glob patterns to match tsconfig files.
+   */
+  patterns?: GlobbyPatterns
+  /**
+   * Specific tsconfig files to include (takes precedence over `patterns`).
+   */
+  tsConfigFiles?: string[]
+}
+
 /**
  * Graph of tsconfigs to owned files and references.
  */
