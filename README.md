@@ -1,6 +1,6 @@
 # tsconfig-graph
 
-Builds a graph of tsconfigs to the files they own and the project references they declare. Includes helpers to invert to files to configs and references to configs.
+Builds a graph of tsconfigs to the files they own and the project references they declare. Includes helpers to invert files to configs and references to configs.
 
 ## CLI Usage
 
@@ -70,17 +70,6 @@ const referencesToConfigs = mapReferences(tsConfigGraph)
 ## Types
 
 ```ts
-/** Path to a tsconfig file (relative to cwd, POSIX separators) */
-export type ConfigFileName = string
-
-/** Path to a file (relative to cwd, POSIX separators) */
-export type FileName = string
-
-export interface TSConfigGraphNode {
-  files: FileName[]
-  references: ConfigFileName[]
-}
-
 export interface BuildTSConfigGraphOptions {
   /**
    * The maximum number of concurrently processed tsconfigs.
@@ -115,6 +104,17 @@ export interface BuildTSConfigGraphOptions {
    * Specific tsconfig files to include (takes precedence over `patterns`).
    */
   tsConfigFiles?: string[]
+}
+
+/** Path to a tsconfig file (relative to cwd, POSIX separators) */
+export type ConfigFileName = string
+
+/** Path to a file (relative to cwd, POSIX separators) */
+export type FileName = string
+
+export interface TSConfigGraphNode {
+  files: FileName[]
+  references: ConfigFileName[]
 }
 
 /**

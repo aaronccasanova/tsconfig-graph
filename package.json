@@ -1,6 +1,6 @@
 {
   "name": "tsconfig-graph",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Builds a graph of tsconfigs to owning files and project references",
   "type": "module",
   "main": "./dist/index.js",
