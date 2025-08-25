@@ -38,6 +38,8 @@ export interface BuildTSConfigGraphOptions {
   gitignore?: GlobbyOptions['gitignore']
   /**
    * Glob patterns to match tsconfig files.
+   *
+   * @default '**\/tsconfig*.json'
    */
   patterns?: GlobbyPatterns
   /**
@@ -47,7 +49,7 @@ export interface BuildTSConfigGraphOptions {
 }
 
 /**
- * Build a graph of tsconfigs to their owned files and references.
+ * Builds a graph of tsconfigs to their owned files and references.
  */
 export async function buildTSConfigGraph(
   options?: BuildTSConfigGraphOptions,

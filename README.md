@@ -1,6 +1,6 @@
 # tsconfig-graph
 
-Build a graph of tsconfigs to the files they own and the project references they declare. Includes helpers to invert to files to configs and references to configs.
+Builds a graph of tsconfigs to the files they own and the project references they declare. Includes helpers to invert to files to configs and references to configs.
 
 ## CLI Usage
 
@@ -58,13 +58,10 @@ npx tsconfig-graph map-references
 ```ts
 import { buildTSConfigGraph, mapFiles, mapReferences } from 'tsconfig-graph'
 
-const tsConfigGraph = await buildTSConfigGraph({
-  cwd: process.cwd(), // default
-  patterns: '**/tsconfig*.json', // default
-  // or: tsConfigFiles: ['app/tsconfig.json', 'utils/tsconfig.json']
-})
+const tsConfigGraph = await buildTSConfigGraph()
 
 const filesToConfigs = mapFiles(tsConfigGraph)
+
 const referencesToConfigs = mapReferences(tsConfigGraph)
 ```
 
@@ -110,6 +107,8 @@ export interface BuildTSConfigGraphOptions {
   gitignore?: GlobbyOptions['gitignore']
   /**
    * Glob patterns to match tsconfig files.
+   *
+   * @default '**\/tsconfig*.json'
    */
   patterns?: GlobbyPatterns
   /**

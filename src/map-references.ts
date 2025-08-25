@@ -1,7 +1,7 @@
 import type { ReferencesToConfigs, TSConfigGraph } from './types.js'
 
 /**
- * Build a mapping of referenced tsconfigs to tsconfigs that include them.
+ * Builds a mapping of referenced tsconfigs to tsconfigs that include them.
  */
 export function mapReferences(
   tsConfigGraph: TSConfigGraph,

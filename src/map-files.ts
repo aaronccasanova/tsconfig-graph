@@ -1,7 +1,7 @@
 import type { FilesToConfigs, TSConfigGraph } from './types.js'
 
 /**
- * Build a mapping of files to tsconfigs that own them.
+ * Builds a mapping of files to tsconfigs that own them.
  */
 export function mapFiles(tsConfigGraph: TSConfigGraph): FilesToConfigs {
   const filesToConfigs: FilesToConfigs = {}
